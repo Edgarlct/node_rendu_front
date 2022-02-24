@@ -23,7 +23,7 @@ export default {
   data(){
     return{
       messages: [],
-      socket: io('http://192.168.0.15:3001/'),
+      socket: io('http://localhost:3001/'),
     }
   },
   mounted() {
@@ -37,11 +37,11 @@ export default {
 
   methods:{
     sendMessage(e){
-      e.preventDefault()
       let form = document.getElementById('sendMessage')
       form = new FormData(form)
       let data = {'message': form.get('message')}
       this.socket.emit('message', data)
+      e.preventDefault()
     }
   }
 }
