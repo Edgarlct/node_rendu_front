@@ -6,6 +6,7 @@ export default {
 </script>
 
 <template>
+  <img class="menu_burger" src="./assets/menu_black_24dp.png">
     <div class="menu">
       <div class="menu__top">
         <h1>Open<span>Chat</span></h1>
@@ -51,7 +52,7 @@ export default {
       <div class="chatbox__info">
         <div>
           <h2>Nom chatroom</h2>
-          <p>Nombre personne</p>
+          <p>8 membres</p>
         </div>
         <img src="./assets/notifications_black_24dp.png">
       </div>
