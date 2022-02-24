@@ -1,20 +1,21 @@
+
+
 <template>
   <main>
 
     
 
-    <h1>Create new account <span>.</span></h1>
+    <h1>Login <span>.</span></h1>
 
     <form action="" class="register_form">
 
-      <input type="text" placeholder="name">
       <input type="email" placeholder="email">
       <input type="password" placeholder="password">
-      <input class="submit_btn" type="submit" value="Create Account">
+      <input class="submit_btn" type="submit" value="Log in my account">
 
     </form>
 
-    <p>already have a account ? <a href="./login.html">Login here</a></p>
+    <p>Don't have a account ? <a href="./index.html">Create one</a></p>
 
   </main>
 </template>
@@ -22,23 +23,7 @@
 <style>
 @import './assets/base.css';
 
-@media (max-width: 500px ) {
-  
-    h1{
-     font-size:  20px !important;
-    }
-
-  input{
-  font-size: 20px !important;
-  font-weight: bold !important;
-  padding: 20px !important;
-  margin-top: 40px !important;
-}
-
-}
-
-
-#app {
+#login {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -83,8 +68,6 @@ h1{
   color: white;
   height: fit-content;
   font-weight: bold;
-  text-align: center;
-
 
 }
 
@@ -116,8 +99,6 @@ a,
   transition: 0.4s;
 }
 
-
-
 @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
@@ -128,6 +109,7 @@ a,
   body {
     display: flex;
     place-items: center;
+    justify-content: center;
   }
 
   #app {
