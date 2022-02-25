@@ -84,13 +84,13 @@ table {
   background: #675e77;
 }
 
-#chatroom {
+.chatroom {
   min-height: 100vh;
   width: 100%;
   display: flex;
   position: relative;
 }
-#chatroom .menu_burger {
+.chatroom .menu_burger {
   position: absolute;
   top: 45px;
   left: 31px;
@@ -100,7 +100,7 @@ table {
   height: 30px;
   cursor: pointer;
 }
-#chatroom .menu {
+.chatroom .menu {
   background-color: var(--dark-purple);
   width: 311px;
   display: flex;
@@ -108,19 +108,19 @@ table {
   justify-content: space-between;
   padding: 36px 39px 36px 25px;
 }
-#chatroom .menu .menu__top {
+.chatroom .menu .menu__top {
   display: flex;
   flex-direction: column;
   gap: 50px;
 }
-#chatroom .menu .menu__top h1 {
+.chatroom .menu .menu__top h1 {
   font-size: 24px;
   color: white;
 }
-#chatroom .menu .menu__top h1 span {
+.chatroom .menu .menu__top h1 span {
   color: var(--green);
 }
-#chatroom .menu .menu__top .user-profile {
+.chatroom .menu .menu__top .user-profile {
   background-color: var(--light-purple);
   border-radius: 15px;
   display: flex;
@@ -128,78 +128,78 @@ table {
   justify-content: space-between;
   align-items: center;
 }
-#chatroom .menu .menu__top .user-profile img {
+.chatroom .menu .menu__top .user-profile img {
   width: 50px;
   height: 47.79px;
 }
-#chatroom .menu .menu__top .user-profile div:first-of-type .name-user {
+.chatroom .menu .menu__top .user-profile div:first-of-type .name-user {
   color: white;
   font-size: 24px;
   font-weight: 400;
 }
-#chatroom .menu .menu__top .user-profile div:first-of-type .status {
+.chatroom .menu .menu__top .user-profile div:first-of-type .status {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 8px;
 }
-#chatroom .menu .menu__top .user-profile div:first-of-type .status p {
+.chatroom .menu .menu__top .user-profile div:first-of-type .status p {
   font-size: 18px;
   color: var(--gray);
   font-weight: 400;
 }
-#chatroom .menu .menu__top .user-profile div:first-of-type .status div {
+.chatroom .menu .menu__top .user-profile div:first-of-type .status div {
   width: 15px;
   height: 15px;
   background-color: #40D933;
   border-radius: 100%;
 }
-#chatroom .menu .menu__top .user-profile .points_list {
+.chatroom .menu .menu__top .user-profile .points_list {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 5px;
   cursor: pointer;
 }
-#chatroom .menu .menu__top .user-profile .points_list .points {
+.chatroom .menu .menu__top .user-profile .points_list .points {
   width: 5px;
   height: 5px;
   border-radius: 100%;
   background-color: var(--gray);
 }
-#chatroom .menu .menu__top .members_title {
+.chatroom .menu .menu__top .members_title {
   display: flex;
   align-items: center;
   gap: 13px;
 }
-#chatroom .menu .menu__top .members_title p {
+.chatroom .menu .menu__top .members_title p {
   color: var(--gray);
   font-size: 18px;
   font-weight: 400;
 }
-#chatroom .menu .menu__top .members_title img {
+.chatroom .menu .menu__top .members_title img {
   color: white;
 }
-#chatroom .menu .menu__top .members_list {
+.chatroom .menu .menu__top .members_list {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-#chatroom .menu .menu__top .members_list .member_card {
+.chatroom .menu .menu__top .members_list .member_card {
   display: flex;
   align-items: center;
   gap: 13px;
 }
-#chatroom .menu .menu__top .members_list .member_card img {
+.chatroom .menu .menu__top .members_list .member_card img {
   width: 24.06px;
   height: 23px;
 }
-#chatroom .menu .menu__top .members_list .member_card p {
+.chatroom .menu .menu__top .members_list .member_card p {
   color: white;
   font-size: 14px;
   font-weight: 400;
 }
-#chatroom .menu .logout a {
+.chatroom .menu .logout a {
   color: white;
   font-size: 14px;
   font-weight: 400;
@@ -208,11 +208,11 @@ table {
   gap: 17px;
   border-radius: 15px;
 }
-#chatroom .menu .logout a:hover {
+.chatroom .menu .logout a:hover {
   background-color: var(--light-purple);
   padding: 10px 20px;
 }
-#chatroom .chatbox {
+.chatroom .chatbox {
   background-color: var(--medium-purple);
   width: calc(100% - 311px);
   padding: 42px 53px 40px 53px;
@@ -220,82 +220,82 @@ table {
   flex-direction: column;
   justify-content: space-between;
 }
-#chatroom .chatbox.active {
+.chatroom .chatbox.active {
   display: none;
 }
-#chatroom .chatbox .chatbox__info {
+.chatroom .chatbox .chatbox__info {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-#chatroom .chatbox .chatbox__info div {
+.chatroom .chatbox .chatbox__info div {
   display: flex;
   align-items: center;
   gap: 24px;
 }
-#chatroom .chatbox .chatbox__info div h2 {
+.chatroom .chatbox .chatbox__info div h2 {
   color: white;
   font-size: 24px;
   font-weight: 400;
 }
-#chatroom .chatbox .chatbox__info div p {
+.chatroom .chatbox .chatbox__info div p {
   color: var(--gray);
   font-size: 18px;
 }
-#chatroom .chatbox .chatbox__msg {
+.chatroom .chatbox .chatbox__msg {
   padding-top: 65px;
   padding-bottom: 65px;
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-#chatroom .chatbox .chatbox__msg .message_box_other {
+.chatroom .chatbox .chatbox__msg .message_box_other {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-#chatroom .chatbox .chatbox__msg .message_box_other div {
+.chatroom .chatbox .chatbox__msg .message_box_other div {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 16px;
 }
-#chatroom .chatbox .chatbox__msg .message_box_other div img {
+.chatroom .chatbox .chatbox__msg .message_box_other div img {
   width: 24.06px;
   height: 23px;
 }
-#chatroom .chatbox .chatbox__msg .message_box_other div p:first-of-type {
+.chatroom .chatbox .chatbox__msg .message_box_other div p:first-of-type {
   color: white;
   font-size: 18px;
 }
-#chatroom .chatbox .chatbox__msg .message_box_other div p:last-of-type {
+.chatroom .chatbox .chatbox__msg .message_box_other div p:last-of-type {
   color: var(--gray);
   font-size: 12px;
 }
-#chatroom .chatbox .chatbox__msg .message_box_other, #chatroom .chatbox .chatbox__msg .message_box_user {
+.chatroom .chatbox .chatbox__msg .message_box_other, .chatroom .chatbox .chatbox__msg .message_box_user {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-#chatroom .chatbox .chatbox__msg .message_box_other div, #chatroom .chatbox .chatbox__msg .message_box_user div {
+.chatroom .chatbox .chatbox__msg .message_box_other div, .chatroom .chatbox .chatbox__msg .message_box_user div {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 16px;
 }
-#chatroom .chatbox .chatbox__msg .message_box_other div img, #chatroom .chatbox .chatbox__msg .message_box_user div img {
+.chatroom .chatbox .chatbox__msg .message_box_other div img, .chatroom .chatbox .chatbox__msg .message_box_user div img {
   width: 24.06px;
   height: 23px;
 }
-#chatroom .chatbox .chatbox__msg .message_box_other div p:first-of-type, #chatroom .chatbox .chatbox__msg .message_box_user div p:first-of-type {
+.chatroom .chatbox .chatbox__msg .message_box_other div p:first-of-type, .chatroom .chatbox .chatbox__msg .message_box_user div p:first-of-type {
   color: white;
   font-size: 18px;
 }
-#chatroom .chatbox .chatbox__msg .message_box_other div p:last-of-type, #chatroom .chatbox .chatbox__msg .message_box_user div p:last-of-type {
+.chatroom .chatbox .chatbox__msg .message_box_other div p:last-of-type, .chatroom .chatbox .chatbox__msg .message_box_user div p:last-of-type {
   color: var(--gray);
   font-size: 12px;
 }
-#chatroom .chatbox .chatbox__msg .message_box_other .message, #chatroom .chatbox .chatbox__msg .message_box_user .message {
+.chatroom .chatbox .chatbox__msg .message_box_other .message, .chatroom .chatbox .chatbox__msg .message_box_user .message {
   margin-left: 35px;
   color: var(--gray);
   display: inline-block;
@@ -304,18 +304,18 @@ table {
   padding: 14px 25px;
   border-radius: 0 11px 11px 11px;
 }
-#chatroom .chatbox .chatbox__msg .message_box_user {
+.chatroom .chatbox .chatbox__msg .message_box_user {
   align-items: flex-end;
 }
-#chatroom .chatbox .chatbox__msg .message_box_user .message {
+.chatroom .chatbox .chatbox__msg .message_box_user .message {
   border-radius: 11px 0px 11px 11px;
   background-color: var(--green);
   color: black;
 }
-#chatroom .chatbox .chatbox__inputs form {
+.chatroom .chatbox .chatbox__inputs form {
   position: relative;
 }
-#chatroom .chatbox .chatbox__inputs form #message_input {
+.chatroom .chatbox .chatbox__inputs form #message_input {
   color: var(--gray);
   font-size: 18px;
   width: 100%;
@@ -325,7 +325,7 @@ table {
   border: none;
   outline: none;
 }
-#chatroom .chatbox .chatbox__inputs form button {
+.chatroom .chatbox .chatbox__inputs form button {
   position: absolute;
   right: 35px;
   top: 20px;

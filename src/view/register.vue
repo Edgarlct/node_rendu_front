@@ -1,5 +1,6 @@
 <template>
   <main>
+    <img src="src/assets/logo_open_chat.png" alt="">
     <h1>Create new account <span>.</span></h1>
 
     <form action="" class="register_form">
@@ -25,7 +26,11 @@ function navTOLogin(){
 </script>
 
 <style scoped>
-
+img{
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
 @media (max-width: 500px ) {
   
     h1{

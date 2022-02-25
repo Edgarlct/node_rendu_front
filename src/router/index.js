@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import message from '../view/message.vue'
+import message from '../view/Chatroom.vue'
 import login from '../view/login.vue'
 import register from '../view/register.vue'
 
