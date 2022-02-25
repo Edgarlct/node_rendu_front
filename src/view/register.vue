@@ -23,12 +23,14 @@ import axios from 'axios'
 
 function userRegister( username, usermail, userpassword){
   axios.post('http://localhost:3001/auth/register', {
-    email: usermail,
-    username: username,
-    password: userpassword
+    email: usermail.email,
+    username: username.username,
+    password: userpassword.password
   })
   .then((response) => {
-    console.log(response)
+    if(response.status === 201){
+      router.push('/')
+    }
   })
 }
 

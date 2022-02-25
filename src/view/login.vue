@@ -22,8 +22,9 @@ import axios from 'axios'
 
 
 function userLogin(){
-  var username = document.querySelectorAll('#username')
-  var password = document.querySelectorAll('#password')
+  let username = document.getElementById('username')
+  let password = document.getElementById('password')
+
   axios.post('http://localhost:3001/auth/login', {
     username: username.value,
     password: password.value
@@ -34,7 +35,11 @@ function userLogin(){
     }
   })
   .then((response) => {
-    console.log(response)
+    if (response.status === 200){
+      localStorage.setItem('jwt', response.data.token)
+      localStorage.setItem('user',  JSON.stringify(response.data.username))
+      router.push('/message')
+    }
   })
 }
 
