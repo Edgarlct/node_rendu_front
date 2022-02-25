@@ -13,7 +13,7 @@ export default {
         <div class="user-profile">
           <img src="./assets/icon_chat.png">
           <div>
-            <h2>David</h2>
+            <h2 class="name-user">David</h2>
             <div class="status">
               <div></div>
               <p>online</p>
@@ -32,11 +32,11 @@ export default {
         <div class="members_list">
           <div class="member_card">
             <img src="./assets/icon_chat.png">
-            <p>Quentin</p>
+            <p class="name_other">Quentin</p>
           </div>
           <div class="member_card">
             <img src="./assets/icon_chat.png">
-            <p>Quentin</p>
+            <p class="name_other">Quentin</p>
           </div>
         </div>
       </div>
@@ -51,8 +51,8 @@ export default {
     <div class="chatbox">
       <div class="chatbox__info">
         <div>
-          <h2>Nom chatroom</h2>
-          <p>8 membres</p>
+          <h2 class="chatroom_name">Nom chatroom</h2>
+          <p class="nbr_membres">8 membres</p>
         </div>
         <img src="./assets/notifications_black_24dp.png">
       </div>

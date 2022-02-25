@@ -132,7 +132,7 @@ table {
   width: 50px;
   height: 47.79px;
 }
-#chatroom .menu .menu__top .user-profile div:first-of-type h2 {
+#chatroom .menu .menu__top .user-profile div:first-of-type .name-user {
   color: white;
   font-size: 24px;
   font-weight: 400;

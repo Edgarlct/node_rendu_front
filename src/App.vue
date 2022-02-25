@@ -9,7 +9,6 @@ import TheWelcome from './components/TheWelcome.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
-      <a href="chatroom.html">CLLICK</a>
     </div>
   </header>
 
