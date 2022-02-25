@@ -1,6 +1,35 @@
+<script setup>
+  import {io} from "socket.io-client";
+</script>
 <script>
 export default {
-  name: "Chatroom"
+  name: "Chatroom",
+  data() {
+    return {
+      messages: [],
+      socket: io('http://localhost:3001/'),
+    }
+  },
+  mounted() {
+    console.log("okcrea")
+    this.socket.on("connect", () => {
+      console.log(this.socket.id)
+    })
+    this.socket.on('received', (arg) => {
+      this.messages = arg
+      console.log(arg)
+    })
+  },
+
+  methods: {
+    sendMessage(e) {
+      let form = document.getElementById('sendMessage')
+      form = new FormData(form)
+      let data = {'message': form.get('message')}
+      this.socket.emit('message', data)
+      e.preventDefault()
+    }
+  }
 }
 </script>
 
@@ -56,32 +85,31 @@ export default {
         </div>
         <img src="../assets/notifications_black_24dp.png">
       </div>
-
       <div class="chatbox__msg">
-        <div class="message_box_other">
+        <div v-bind:class="[item.author === 'bon' ? 'message_box_user' : 'message_box_other']" v-for="item in this.messages">
           <div>
             <img src="../assets/icon_chat.png">
-            <p>Quentin</p>
+            <p>{{ item.author }}</p>
             <p>22/02/2022</p>
           </div>
-          <p class="message">Coucou les amis, j’ai un taser</p>
+          <p class="message">{{ item.message }}</p>
         </div>
-        <div class="message_box_other">
-          <div>
-            <img src="../assets/icon_chat.png">
-            <p>Quentin</p>
-            <p>22/02/2022</p>
-          </div>
-          <p class="message">Coucou les amis, j’ai un taser</p>
-        </div>
-        <div class="message_box_user">
-          <div>
-            <img src="../assets/icon_chat.png">
-            <p>Quentin</p>
-            <p>22/02/2022</p>
-          </div>
-          <p class="message">Coucou les amis, j’ai un taser</p>
-        </div>
+<!--        <div class="message_box_other">-->
+<!--          <div>-->
+<!--            <img src="../assets/icon_chat.png">-->
+<!--            <p>Quentin</p>-->
+<!--            <p>22/02/2022</p>-->
+<!--          </div>-->
+<!--          <p class="message">Coucou les amis, j’ai un taser</p>-->
+<!--        </div>-->
+<!--        <div class="message_box_user">-->
+<!--          <div>-->
+<!--            <img src="../assets/icon_chat.png">-->
+<!--            <p>Quentin</p>-->
+<!--            <p>22/02/2022</p>-->
+<!--          </div>-->
+<!--          <p class="message">Coucou les amis, j’ai un taser</p>-->
+<!--        </div>-->
       </div>
 
       <div class="chatbox__inputs">
