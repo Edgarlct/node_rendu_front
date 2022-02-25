@@ -37,7 +37,7 @@ function userLogin(){
   .then((response) => {
     if (response.status === 200){
       localStorage.setItem('jwt', response.data.token)
-      localStorage.setItem('user',  JSON.stringify(response.data.username))
+      localStorage.setItem('user',  response.data.username)
       router.push('/message')
     }
   })

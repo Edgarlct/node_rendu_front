@@ -6,6 +6,7 @@ export default {
   name: "Chatroom",
   data() {
     return {
+      author: localStorage.getItem('user'),
       messages: [],
       socket: io('http://localhost:3001/'),
     }
@@ -22,12 +23,12 @@ export default {
   },
 
   methods: {
-    sendMessage(e) {
+    sendMessage() {
+      console.log('call')
       let form = document.getElementById('sendMessage')
       form = new FormData(form)
-      let data = {'message': form.get('message')}
+      let data = {'message': form.get('message'), 'author': this.author}
       this.socket.emit('message', data)
-      e.preventDefault()
     }
   }
 }
@@ -86,7 +87,7 @@ export default {
         <img src="../assets/notifications_black_24dp.png">
       </div>
       <div class="chatbox__msg">
-        <div v-bind:class="[item.author === 'bon' ? 'message_box_user' : 'message_box_other']" v-for="item in this.messages">
+        <div v-bind:class="[item.author === this.author ? 'message_box_user' : 'message_box_other']" v-for="item in this.messages">
           <div>
             <img src="../assets/icon_chat.png">
             <p>{{ item.author }}</p>
@@ -94,27 +95,11 @@ export default {
           </div>
           <p class="message">{{ item.message }}</p>
         </div>
-<!--        <div class="message_box_other">-->
-<!--          <div>-->
-<!--            <img src="../assets/icon_chat.png">-->
-<!--            <p>Quentin</p>-->
-<!--            <p>22/02/2022</p>-->
-<!--          </div>-->
-<!--          <p class="message">Coucou les amis, j’ai un taser</p>-->
-<!--        </div>-->
-<!--        <div class="message_box_user">-->
-<!--          <div>-->
-<!--            <img src="../assets/icon_chat.png">-->
-<!--            <p>Quentin</p>-->
-<!--            <p>22/02/2022</p>-->
-<!--          </div>-->
-<!--          <p class="message">Coucou les amis, j’ai un taser</p>-->
-<!--        </div>-->
       </div>
 
       <div class="chatbox__inputs">
-        <form>
-          <input type="text" id="message_input" name="msg_input" placeholder="Ecrire un message...">
+        <form @submit.prevent="this.sendMessage" id="sendMessage">
+          <input type="text" id="message_input" name="message" placeholder="Ecrire un message...">
           <button type="submit">
             <img src="../assets/send_icon.png">
           </button>
