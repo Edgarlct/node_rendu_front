@@ -28,6 +28,21 @@ function navTORegister(){
 
 <style scoped>
 
+@media (max-width: 500px ) {
+  
+    h1{
+     font-size:  20px !important;
+    }
+
+  input{
+  font-size: 20px !important;
+  font-weight: bold !important;
+  padding: 20px !important;
+  margin-top: 40px !important;
+}
+
+}
+
 #login {
   max-width: 1280px;
   margin: 0 auto;
