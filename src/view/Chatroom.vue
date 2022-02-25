@@ -1,5 +1,6 @@
 <script setup>
   import {io} from "socket.io-client";
+  import router from "../router/index.js";
 </script>
 <script>
 export default {
@@ -12,6 +13,9 @@ export default {
     }
   },
   mounted() {
+    if (localStorage.getItem('user') == null){
+      router.push('/')
+    }
     console.log("okcrea")
     this.socket.on("connect", () => {
       console.log(this.socket.id)
@@ -29,6 +33,13 @@ export default {
       form = new FormData(form)
       let data = {'message': form.get('message'), 'author': this.author}
       this.socket.emit('message', data)
+    },
+
+    logout(){
+        if (confirm('Êtes vous sur de vouloir vous déconnecter?')){
+          localStorage.clear()
+          router.push('/')
+        }
     }
   }
 }
@@ -43,7 +54,7 @@ export default {
         <div class="user-profile">
           <img src="../assets/icon_chat.png">
           <div>
-            <h2 class="name-user">David</h2>
+            <h2 class="name-user">{{this.author}}</h2>
             <div class="status">
               <div></div>
               <p>online</p>
@@ -71,7 +82,7 @@ export default {
         </div>
       </div>
       <div class="logout">
-        <a href="">
+        <a @click="logout">
           <img src="../assets/logout_black_24dp.png">
           Se déconnecter
         </a>
