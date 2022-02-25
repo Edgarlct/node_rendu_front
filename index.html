@@ -4,9 +4,35 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Chatroom</title>
+    <style>
+
+      body{
+        background-color: #312C41;
+      }
+      
+      img{
+      position: absolute;
+      top: 50px;
+      left: 50px;
+    }
+   
+    #app{
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (max-width: 1200px) {
+    img{
+      display: none;
+    }
+  }
+
+    </style>
   </head>
   <body>
+    <img src="src/assets/logo_open_chat.png" alt="">
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
