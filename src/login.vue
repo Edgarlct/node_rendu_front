@@ -20,7 +20,7 @@
   </main>
 </template>
 
-<style>
+<style scoped>
 @import './assets/base.css';
 
 #login {
@@ -30,11 +30,13 @@
 
 }
 
+
+
 input{
   font-family: Roboto, sans-serif;
-  font-size: 36px;
+  font-size: 26px;
   font-weight: bold;
-  padding: 20px;
+  padding: 10px;
   background-color: #3C374F;
   border: none;
   border-radius: 40px;
@@ -68,6 +70,7 @@ h1{
   color: white;
   height: fit-content;
   font-weight: bold;
+  text-align: center;
 
 }
 
