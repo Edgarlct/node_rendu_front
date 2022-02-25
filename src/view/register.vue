@@ -3,11 +3,11 @@
     <img src="src/assets/logo_open_chat.png" alt="">
     <h1>Create new account <span>.</span></h1>
 
-    <form action="" class="register_form">
+    <form action="" class="register_form" @submit.prevent=" userRegister({username}, {email}, {password})">
 
-      <input type="text" placeholder="name">
-      <input type="email" placeholder="email">
-      <input type="password" placeholder="password">
+      <input type="text" placeholder="name" v-model="username">
+      <input type="email" placeholder="email" v-model="email">
+      <input type="password" placeholder="password" v-model="password">
       <input class="submit_btn" type="submit" value="Create Account">
 
     </form>
@@ -19,6 +19,36 @@
 
 <script setup>
 import router from "../router";
+import axios from 'axios'
+
+function userRegister( username, usermail, userpassword){
+  axios.post('http://localhost:3001/auth/register', {
+    email: usermail,
+    username: username,
+    password: userpassword
+  })
+  .then((response) => {
+    console.log(response)
+  })
+}
+
+/* function userRegister(username, password, email){
+    console.log('submit')
+    const url = import.meta.env.API_URL
+    var myHeaders = new Headers();
+    const requestSettings = {
+        method: 'POST',
+        Headers: myHeaders,
+        mode: 'no-cors',
+        contentType: 'applications/json',
+        body: {
+          "username": "eriuhffrfiuerf",
+          "password": "passwfergfergrgzord",
+          "email": "teferfst@ae.com"
+        }
+    }
+    fetch('http://localhost:3001/auth/register', requestSettings)
+} */
 
 function navTOLogin(){
   router.push('/')

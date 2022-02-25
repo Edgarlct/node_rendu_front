@@ -3,10 +3,10 @@
     <img src="src/assets/logo_open_chat.png" alt="">
     <h1>Login <span>.</span></h1>
 
-    <form action="" class="register_form">
+    <form action="" class="register_form" @submit.prevent="userLogin({username}, {password})">
 
-      <input type="email" placeholder="email">
-      <input type="password" placeholder="password">
+      <input type="text" placeholder="email" v-model="username">
+      <input type="password" placeholder="password" v-model="password">
       <input class="submit_btn" type="submit" value="Log in my account">
 
     </form>
@@ -18,6 +18,24 @@
 
 <script setup>
 import router from "../router";
+import axios from 'axios'
+
+function userLogin(username, password){
+  axios.post('http://localhost:3001/auth/login', {
+    username: username,
+    password: password
+  },
+  {
+    headers: {
+      "X-Requested-With": "XMLHttpRequest",
+      "Access-Control-Allow-Origin": "*",
+      mode: 'no-cors'
+    }
+  })
+  .then((response) => {
+    console.log(response)
+  })
+}
 
 function navTORegister(){
   router.push('/register')
