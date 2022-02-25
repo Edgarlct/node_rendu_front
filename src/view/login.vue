@@ -3,10 +3,10 @@
     <img src="src/assets/logo_open_chat.png" alt="">
     <h1>Login <span>.</span></h1>
 
-    <form action="" class="register_form">
+    <form action="" class="register_form" @submit.prevent="userLogin()">
 
-      <input type="email" placeholder="email">
-      <input type="password" placeholder="password">
+      <input type="text" placeholder="username" id="username">
+      <input type="password" placeholder="password" id="password">
       <input class="submit_btn" type="submit" value="Log in my account">
 
     </form>
@@ -18,6 +18,30 @@
 
 <script setup>
 import router from "../router";
+import axios from 'axios'
+
+
+function userLogin(){
+  let username = document.getElementById('username')
+  let password = document.getElementById('password')
+
+  axios.post('http://localhost:3001/auth/login', {
+    username: username.value,
+    password: password.value
+  },
+  {
+    headers: {
+      mode: 'no-cors'
+    }
+  })
+  .then((response) => {
+    if (response.status === 200){
+      localStorage.setItem('jwt', response.data.token)
+      localStorage.setItem('user',  JSON.stringify(response.data.username))
+      router.push('/message')
+    }
+  })
+}
 
 function navTORegister(){
   router.push('/register')
